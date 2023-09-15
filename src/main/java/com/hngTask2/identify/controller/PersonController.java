@@ -16,21 +16,18 @@ public class PersonController {
     private final PersonService personService;
 
     @PostMapping
-    public ResponseEntity<?> create(
-            @Valid @RequestBody PersonRequest createPersonRequest
-            ){
+    public ResponseEntity<?> create(@Valid @RequestBody PersonRequest createPersonRequest){
         return ResponseEntity.status(HttpStatus.CREATED).body(personService.createPerson(createPersonRequest));
     }
 
     @GetMapping("{user_id}")
-    public ResponseEntity<?> getPassengerById(
-            @PathVariable Long user_id)
+    public ResponseEntity<?> getPassengerById(@PathVariable Long user_id)
     {
         return ResponseEntity.ok(
                 personService.getPersonById(user_id)
         );
     }
-    @PutMapping(value = "{user_id}", consumes = {"application/json-patch+json"})
+    @PutMapping("update/{user_id}")
     public ResponseEntity<?> updatePerson(@PathVariable Long user_id, @RequestBody UpdateProfileRequest request) {
         try{
             return ResponseEntity.ok(personService.updateProfile(user_id, request));

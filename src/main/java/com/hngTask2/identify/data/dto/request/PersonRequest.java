@@ -19,18 +19,13 @@ import static com.hngTask2.identify.utility.IdentifyUtilities.*;
 @Builder
 public class PersonRequest {
 
-    @NotBlank(message = NOT_BLANK)
     @NotNull(message = NOT_NULL)
     private String firstName;
 
-    @NotBlank(message = NOT_BLANK)
     @NotNull(message = NOT_NULL)
     private String lastName;
 
-    @Pattern(regexp = "((^234)[0–9]{10})", message = INVALID_PHONE_NUMBER)
     private String phoneNumber;
 
-   @NotBlank(message = NOT_BLANK)
-   @NotNull(message = NOT_NULL)
     private Address address;
 }

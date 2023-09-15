@@ -58,11 +58,13 @@ your-project/
 │   ├── main/
 │   │   ├── java/
 │   │   │   └── com/
-│   │   │       └── yourcompany/
-│   │   │           └── yourproject/
+│   │   │       └── hngTask2/
+│   │   │           └── identify/
 │   │   │               ├── controller/
-│   │   │               ├── model/
-│   │   │               ├── repository/
+│   │   │               ├── data/
+                              ├── dto
+                              ├── repository
+                              ├── model                              
 │   │   │               └── service/
 │   │   └── resources/
 │   │       ├── application.properties
@@ -101,41 +103,11 @@ your-project/
 ## API Endpoints
 Here are the main endpoints provided by the API:
 
-GET /api/persons: Retrieve a list of all persons.
-GET /api/persons/{id}: Retrieve a specific person by their ID.
-POST /api/persons: Create a new person.
-PATCH /api/persons/{id}: Update a person using JSON Patch.
-DELETE /api/persons/{id}: Delete a person by their ID.
+- GET /api/{id} : Retrieve a list of all persons.
+- GET /api/persons/{id}: Retrieve a specific person by their ID.
+- POST /api: Create a new person.
+- PUT /api/update/{id}: Update person profile
+- DELETE /api/persons/{id}: Delete a person by their ID.
 
 ## Documentation
-
-
-Examples
-Example 1: Creating a Person
-To create a new person, send a POST request to /api/persons with a JSON body containing the person's details.
-
-Example request body:
-
-json
-Copy code
-{
-  "firstName": "John",
-  "lastName": "Doe",
-  "address": {
-    "city": "New York",
-    "street": "123 Main St",
-    "state": "NY",
-    "country": "USA"
-  },
-  "phoneNumber": "+1-123-456-7890"
-}
-Example 2: Updating a Person
-To update a person's information, send a PATCH request to /api/persons/{id} with a JSON Patch document in the request body.
-
-Example request body (JSON Patch):
-
-json
-Copy code
-[
-  { "op": "replace", "path": "/phoneNumber", "value": "+1-987-654-3210" }
-]
+- [Postman](https://documenter.getpostman.com/view/24396338/2s9YC5yXiQ)
